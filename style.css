@@ -1,0 +1,280 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+/* MAIN WRAPPER */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* HEADER / NAVBAR */
+.head {
+  display: flex;
+  width: 100%;
+  height: 72px;
+  position: relative;
+  z-index: 10;
+  background: #696969;
+}
+
+.head-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  height: 72px;
+  margin: 0 auto;
+}
+
+/* LOGO */
+.logo h1 {
+  color: white;
+  font-size: 24px;
+}
+
+/* MAIN CONTENT */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 72px 5px 0 5px;
+}
+
+.intro,
+.Raumliste {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  min-height: calc(100vh - 72px);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+/* DESKTOP MENU */
+.menu_list {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.menu_item {
+  position: relative;
+}
+
+.menu_item a,
+#editModeBtn312 {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sub_list {
+  display: none;
+  position: absolute;
+  width: 160px;
+  left: 50%;
+  margin-left: -80px;
+  text-align: center;
+  z-index: 2;
+}
+/* HAMBURGER ICON */
+.icon_menu {
+  display: none;
+}
+
+.i_menu {
+  height: 22px;
+  width: 22px;
+  background: url(https://www.tencent.com/img/mobile/icon_menu.png) no-repeat
+    center;
+  background-size: contain;
+  display: block;
+}
+
+.i_close {
+  height: 22px;
+  width: 22px;
+  background: url(https://www.tencent.com/img/mobile/icon_menu_close.png)
+    no-repeat center;
+  background-size: contain;
+  display: none;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 768px) {
+  .icon_menu {
+    display: block;
+    height: 22px;
+    width: 22px;
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    z-index: 999;
+  }
+
+  .en-us .menu_list .menu_item {
+    display: block;
+    float: none;
+    height: 63px;
+    margin-left: 58px;
+  }
+
+  /* Toggle icons */
+  .icon_menu.open .i_menu {
+    display: none;
+  }
+
+  .icon_menu.open .i_close {
+    display: block;
+  }
+
+  /* MOBILE SLIDE MENU */
+  .menu_list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #5a5a5a;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateX(-260px);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    z-index: 998;
+  }
+
+  .menu_list.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* hide desktop menu */
+  .head-content {
+    justify-content: center;
+  }
+
+  .head-content .menu_list {
+    position: fixed;
+  }
+  .menu_list .menu_item .txt {
+    font-weight: normal;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu_list .menu_item {
+    display: block;
+    float: none;
+    height: 63px;
+    margin-left: 58px;
+  }
+}
+
+.Raumliste {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-y: auto;
+}
+
+.Raumliste .item {
+  padding: 1rem;
+  background-color: #b99f6fa9;
+  border-radius: 0.6rem;
+}
+
+.Raumliste .item {
+  text-decoration: none;
+  color: white;
+}
+
+.quiz,
+.info-text {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.quiz h2 {
+  margin-bottom: 10px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+#submitQuiz {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #696969;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#submitQuiz:hover {
+  background: #555;
+}
+
+#quizResult {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.quiz-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-score {
+  font-weight: bold;
+  color: white;
+  opacity: 0.8;
+  font-size: 1.4rem;
+}
+
+.edit-btn {
+  padding: 10px 16px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.edit-btn:hover {
+  background: #333;
+}
+
+.resetScoreBtn {
+  padding: 8px 12px;
+  background: #b33a3a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.resetScoreBtn:hover {
+  background: #a12d2d;
+}

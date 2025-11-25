@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TdoT 2025 - GTS Lessing</title>
+  </head>
+  <body>
+    <div class="head">
+      <div class="icon_menu">
+        <a class="i_menu"></a>
+        <a class="i_close"></a>
+      </div>
+
+      <div class="head-content">
+        <a class="logo" href="https://tdot-2025.netlify.app">
+          <h1 style="margin: 0">Lessing</h1>
+        </a>
+
+        <!-- SLIDE MENU -->
+        <ul class="menu_list">
+          <li class="menu_item">
+            <a class="txt" href="/raeume.html">Raum Liste</a>
+          </li>
+          <li class="menu_item">
+            <a class="txt" href="#">About Me</a>
+          </li>
+          <ul class="sub_list">
+            <li><a href="/raeume.html">Raum Liste</a></li>
+            <li><a href="#">About Me</a></li>
+          </ul>
+
+          <li class="menu_item menu_item_lan">
+            <a class="en" lang="en-us">English</a>
+            <span style="color: white; font-size: 1.6rem">|</span>
+            <a class="de" lang="de-de">Deutsch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="intro">
+        <div class="title">
+          <h1>Wilkommen in Raum 312!</h1>
+        </div>
+        <img
+          src="https://www.hallanzeiger.de/wp-content/uploads/2023/12/informatik_klassenraum-678x381.jpg"
+          style="max-width: 500px; height: auto; margin-top: 20px"
+          alt=""
+        />
+        <div class="info-text">
+          Das ist der Computerraum und hier findest du insgesamt 28 Computers
+          die auf 5 verschiedene Inseln. Eine Insel kann verschieden aussehen,
+          meistens befinden sich 5 Computer auf einer. In einen Computerraum
+          gibt es eine wichtige Regel die man folgen muss und die heißt: nicht
+          trinken oder nicht essen!
+        </div>
+        <div class="quiz">
+          <h2>Mini-Quiz</h2>
+
+          <form id="quizForm">
+            <!-- Q1 -->
+            <div class="question">
+              <p>1. Wieviele Computers sind im Raum?</p>
+              <label><input type="radio" name="q1" value="0" /> 20</label><br />
+              <label><input type="radio" name="q1" value="1" /> 28</label><br />
+              <label><input type="radio" name="q1" value="0" /> 29</label>
+            </div>
+
+            <!-- Q2 -->
+            <div class="question">
+              <p>
+                2. Was darf man
+                <span style="text-decoration: underline">nicht</span> im
+                Computerraum machen?
+              </p>
+              <label
+                ><input type="radio" name="q2" value="0" /> dumme fragen
+                stellen</label
+              ><br />
+              <label
+                ><input type="radio" name="q2" value="0" /> fleißig sein</label
+              ><br />
+              <label
+                ><input type="radio" name="q2" value="1" /> essen und
+                trinken</label
+              >
+            </div>
+
+            <!-- Q3 -->
+            <div class="question">
+              <p>3. Was ist die Hauptstadt von Weißrussland(Belarus)?</p>
+              <label><input type="radio" name="q3" value="0" /> Moskau </label
+              ><br />
+              <label><input type="radio" name="q3" value="1" /> Minsk</label
+              ><br />
+              <label><input type="radio" name="q3" value="0" /> Berlin</label>
+            </div>
+
+            <!-- Button -->
+            <button type="button" id="submitQuiz">Ergebnis anzeigen</button>
+          </form>
+
+          <!-- RESULT -->
+          <div id="quizResult"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const quizKey = "quizScore"; // localStorage key
+      const quizForm = document.getElementById("quizForm");
+      const quizResult = document.getElementById("quizResult");
+      const submitBtn = document.getElementById("submitQuiz");
+
+      const savedScore = localStorage.getItem(quizKey);
+
+      if (savedScore !== null && parseInt(savedScore) <= 0) {
+        quizForm
+          .querySelectorAll("input")
+          .forEach((inp) => (inp.disabled = false));
+        submitBtn.disabled = false;
+
+        quizResult.innerHTML = "";
+
+        localStorage.removeItem("quizScore");
+      }
+
+      submitBtn.addEventListener("click", function () {
+        let score = 0;
+        const answers = ["q1", "q2", "q3"];
+
+        answers.forEach((q) => {
+          const answer = quizForm.querySelector(`input[name="${q}"]:checked`);
+          if (answer && answer.value === "1") score++;
+        });
+
+        localStorage.setItem(quizKey, score);
+
+        quizResult.innerHTML = `<h3>Du hast ${score} / 3 richtig!</h3>`;
+
+        Array.from(quizForm.querySelectorAll("input")).forEach((inp) => {
+          inp.disabled = true;
+        });
+
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = "0.5";
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
