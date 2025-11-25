@@ -108,22 +108,25 @@
       </div>
     </div>
     <script>
-      const quizKey = "quizScore"; // localStorage key
-      const quizForm = document.getElementById("quizForm");
-      const quizResult = document.getElementById("quizResult");
-      const submitBtn = document.getElementById("submitQuiz");
+        if (savedScore !== null) {
+        const score = parseInt(savedScore);
 
-      const savedScore = localStorage.getItem(quizKey);
+        if (score <= 0) {
+          quizForm
+            .querySelectorAll("input")
+            .forEach((inp) => (inp.disabled = false));
+          submitBtn.disabled = false;
+          quizResult.innerHTML = "";
+          localStorage.removeItem(quizKey);
+        } else {
+          quizForm
+            .querySelectorAll("input")
+            .forEach((inp) => (inp.disabled = true));
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = "0.5";
 
-      if (savedScore !== null && parseInt(savedScore) <= 0) {
-        quizForm
-          .querySelectorAll("input")
-          .forEach((inp) => (inp.disabled = false));
-        submitBtn.disabled = false;
-
-        quizResult.innerHTML = "";
-
-        localStorage.removeItem("quizScore");
+          quizResult.innerHTML = `<h3>Du hast ${score} / 3 richtig!</h3>`;
+        }
       }
 
       submitBtn.addEventListener("click", function () {
@@ -139,10 +142,9 @@
 
         quizResult.innerHTML = `<h3>Du hast ${score} / 3 richtig!</h3>`;
 
-        Array.from(quizForm.querySelectorAll("input")).forEach((inp) => {
-          inp.disabled = true;
-        });
-
+        quizForm
+          .querySelectorAll("input")
+          .forEach((inp) => (inp.disabled = true));
         submitBtn.disabled = true;
         submitBtn.style.opacity = "0.5";
       });
@@ -150,3 +152,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
