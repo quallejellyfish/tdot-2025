@@ -108,7 +108,14 @@
       </div>
     </div>
     <script>
-        if (savedScore !== null) {
+      const quizKey = "quizScore"; // localStorage key
+      const quizForm = document.getElementById("quizForm");
+      const quizResult = document.getElementById("quizResult");
+      const submitBtn = document.getElementById("submitQuiz");
+
+      const savedScore = localStorage.getItem(quizKey);
+
+      if (savedScore !== null) {
         const score = parseInt(savedScore);
 
         if (score <= 0) {
@@ -152,4 +159,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
