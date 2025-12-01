@@ -36,28 +36,33 @@
           </ul>
 
           <li class="menu_item menu_item_lan">
-            <a class="en" lang="en-us">English</a>
+            <a class="en">English</a>
             <span style="color: white; font-size: 1.6rem">|</span>
-            <a class="de" lang="de-de">Deutsch</a>
+            <a class="de">Deutsch</a>
           </li>
         </ul>
       </div>
     </div>
+
+    <!-- CONTENT -->
     <div class="container">
       <div class="Raumliste">
-        <div style="font-size: 3rem; margin-bottom: 50px">Raumliste</div>
+        <h1 style="text-align: center; margin-bottom: 50px">Raumliste</h1>
         <div
           style="
-            line-height: 0;
             font-weight: 700;
             padding: 1px auto;
             padding: 0 10px 0 10px;
             font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           "
         >
-          Raum
-          <div style="text-align: right">Quiz-Score</div>
+          <span>Raum</span>
+          <span>Quiz-Score</span>
         </div>
+
         <a class="item quiz-item" href="/raum312.html">
           <span>Raum 312</span>
           <span class="quiz-score" id="quizScoreDisplay"></span>

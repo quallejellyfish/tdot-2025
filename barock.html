@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barock - Literaturperiode Handout</title>
+    <link rel="stylesheet" href="epochenstyle.css" />
+  </head>
+
+  <body>
+    <div class="handout-container">
+      <header class="handout-header">
+        <h1>Wolfgang Borchert</h1>
+        <p class="epoch-date">1921 - 1947</p>
+        <p class="handout-subtitle">
+          Ein Überblick über das Leben von Wolfgang Borchert
+        </p>
+      </header>
+
+      <section class="section">
+        <h2>Wer war er?</h2>
+        <p>
+          Wolfgang Borchert war ein deutscher Schriftsteller und eine zentrale
+          Figur der Nachkriegsliteratur, der für seine Werke der
+          Trümmerliteratur bekannt ist
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Eltern</h2>
+        <p>
+          Sohn des Volksschullehrers Fritz Borchert und der Schriftstellerin
+          Hertha Borchert.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Schulausbildung</h2>
+        <ul>
+          <li>1928: Beginn der Volksschule.</li>
+          <li>1932: Wechsel zur Oberrealschule.</li>
+          <li>1937: Verlässt die Oberrealschule vor dem Abitur.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Frühe Tätigkeit</h2>
+        <ul>
+          <li>Schreibt bereits als Jugendlicher Gedichte.</li>
+          <li>Erste Gedichte werden im "Hamburger Anzeiger" veröffentlicht</li>
+        </ul>
+      </section>
+
+      <!-- Geschichte -->
+      <section class="section">
+        <h2>Geschichte</h2>
+        <ul>
+          <li>
+            1939
+            <ul>
+              <li>Buchhändlerlehre</li>
+              <li>privaten Schauspielunterricht</li>
+            </ul>
+          </li>
+          <li>
+            1941
+            <ul>
+              <li>
+                Bricht die Buchhändlerlehre ab und besteht die Schauspielprüfung
+              </li>
+              <li>
+                Arbeitet für drei Monate bei der "Landesbühne Ost-Hannover" in
+                Lüneburg
+              </li>
+              <li>
+                Wird zum Kriegsdienst eingezogen und an die Ostfront geschickt
+              </li>
+            </ul>
+          </li>
+          <li>
+            1942/1943
+            <ul>
+              <li>Wird verwundet und erkrankt an Diphtherie</li>
+              <li>
+                Wird wegen staatsfeindlicher Äußerungen zu neun Monaten
+                Gefängnis verurteilt und inhaftiert
+              </li>
+            </ul>
+          </li>
+          <li>
+            1944/1945
+            <ul>
+              <li>Leidet unter Gefrierungen und Fleckfieber</li>
+              <li>
+                Gerät in französische Kriegsgefangenschaft, aus der er später
+                fliehte
+              </li>
+            </ul>
+          </li>
+          <li>
+            1945
+            <ul>
+              <li>Kehrt in Hamburg zurück nach der Flucht</li>
+              <li>Arbeitet als Regieassistent am Hamburger Schauspielhaus</li>
+              <li>
+                Schreibt Kurzgeschichten und Gedichte, die im Nachlassband "Die
+                traurigen Geranien" gesammelt werden
+              </li>
+            </ul>
+          </li>
+          <li>
+            1946
+            <ul>
+              <li>
+                Schreibt innerhalb einer Woche das expressionistische Drama
+                "Draußen vor der Tür"
+              </li>
+              <li>
+                Das Hörspiel wird im Februar vom NWDR gesendet und erlangt große
+                Bekanntheit
+              </li>
+            </ul>
+          </li>
+          <li>
+            1947
+            <ul>
+              <li>Reist zur Kur in die Schweiz</li>
+              <li>
+                Stirbt am 20. November 1947 in Basel, einen Tag vor der
+                Uraufführung seines Stücks "Draußen vor der Tür".
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Beispiele für Werke -->
+      <section class="section">
+        <h2>Beispiele für Werke</h2>
+        <ul>
+          <li>Draußen vor der Tür: <em>February 13, 1947</em></li>
+          <li>Die Küchenuhr: <em>August 27, 1947</em></li>
+          <li>Das Brot: <em>November 13, 1946</em></li>
+          <li>Nachts schlafen die Ratten doch: <em>1947</em></li>
+        </ul>
+      </section>
+
+      <footer class="handout-footer">
+        <a href="timeline.html" class="back-link" id="back-link"
+          >Zurück zur Zeitleiste</a
+        >
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backLink = document.getElementById("back-link");
+        if (backLink) {
+          backLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            const href = this.getAttribute("href");
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+              window.location.href = href;
+            }, 500);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

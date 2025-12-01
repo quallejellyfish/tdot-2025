@@ -1,0 +1,137 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Garamond&family=Roboto&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Garamond', serif;
+    background-color: #faf3e0;
+    /* Parchment-like background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.handout-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border: 1px solid #e0c68b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.handout-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.handout-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Garamond', serif;
+    color: #5b3924;
+}
+
+.handout-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: #7d5a4f;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #e0c68b;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #5b3924;
+}
+
+.section p,
+.section ul {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+}
+
+.handout-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #a67c52;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
+}
+
+.back-link:hover {
+    background-color: #855e3a;
+    transform: translateY(-2px);
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .handout-container {
+        padding: 20px;
+    }
+
+    .handout-header h1 {
+        font-size: 2em;
+    }
+
+    .handout-subtitle {
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .section p,
+    .section ul {
+        font-size: 1em;
+    }
+
+    .back-link {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media print {
+
+    .box-shadow,
+    .back-link:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+}
