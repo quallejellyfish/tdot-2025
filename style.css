@@ -43,17 +43,31 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 72px 5px 0 5px;
+  margin: 72px 5px 5rem 5px;
 }
 
 .intro,
+.AboutMe {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  min-height: calc(100vh - 72px);
+  margin: 0 auto;
+  padding: 35px 20px 35px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .Raumliste {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 1200px;
   min-height: calc(100vh - 72px);
   margin: 0 auto;
-  padding: 20px;
+  padding: 35px 20px 35px 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .text {
@@ -77,6 +91,13 @@
   color: white;
   text-decoration: none;
   font-size: 18px;
+}
+
+.menu_item a:hover,
+#editModeBtn312:hover,
+.logo h1:hover {
+  text-decoration: underline;
+  transition: text-decoration 0.5s ease;
 }
 
 .sub_list {
@@ -110,7 +131,9 @@
   background-size: contain;
   display: none;
 }
-
+.menu_item_lan {
+  line-height: 0.6;
+}
 /* MOBILE VIEW */
 @media screen and (max-width: 768px) {
   .icon_menu {
