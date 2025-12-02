@@ -15,30 +15,38 @@
 
       <div class="head-content">
         <a class="logo" href="/index.html">
-          <h1 style="margin: 0">Lessing</h1>
+          <h1 style="margin: 0" title="Zur Startseite">Lessing</h1>
         </a>
 
         <!-- SLIDE MENU -->
         <ul class="menu_list">
           <li class="menu_item">
-            <a class="txt" href="/raeume.html">Raum Liste</a>
+            <a class="txt" href="/raeume.html" title="Zur Raum liste"
+              >Raum Liste</a
+            >
           </li>
           <li class="menu_item">
-            <a class="txt" href="/about_me.html">About Me</a>
+            <a class="txt" href="/about_me.html" title="Zur About Me"
+              >About Me</a
+            >
           </li>
           <li id="editModeBtn312" class="txt menu_item">Edit Mode</li>
           <ul class="sub_list">
-            <li><a href="/raeume.html">Raum Liste</a></li>
-            <li><a href="/about_me.html">About Me</a></li>
+            <li>
+              <a href="/raeume.html" title="Zur Raum liste">Raum Liste</a>
+            </li>
+            <li>
+              <a href="/about_me.html" title="Zur About Me">About Me</a>
+            </li>
             <li>
               <button id="editModeBtn312" class="edit-btn">Edit Mode</button>
             </li>
           </ul>
 
           <li class="menu_item menu_item_lan">
-            <a class="en">English</a>
+            <a class="en" title="Sprachenänderung auf English">English</a>
             <span style="color: white; font-size: 1.6rem">|</span>
-            <a class="de">Deutsch</a>
+            <a class="de" title="Sprachenänderung auf Deutsch">Deutsch</a>
           </li>
         </ul>
       </div>
@@ -47,7 +55,10 @@
     <!-- CONTENT -->
     <div class="container">
       <div class="Raumliste">
-        <h1 style="text-align: center; margin-bottom: 50px">Raumliste</h1>
+        <div class="top">
+          <h1>Raumliste</h1>
+          <h2 id="totalScore" style="text-align: center"></h2>
+        </div>
         <div
           style="
             font-weight: 700;
@@ -63,48 +74,35 @@
           <span>Quiz-Score</span>
         </div>
 
-        <a class="item quiz-item" href="/raum312.html">
-          <span>Raum 312</span>
-          <span class="quiz-score" id="quizScoreDisplay"></span>
+        <!-- Raum 311 -->
+        <a class="item quiz-item" href="/raum311.html" data-room="raum311">
+          <span>Raum 311</span>
+          <button class="resetScoreBtn" style="display: none">
+            Quiz-Score zurücksetzen
+          </button>
+          <span class="quiz-score"></span>
         </a>
-        <button class="resetScoreBtn" id="resetScore312" style="display: none">
-          Reset Score
-        </button>
-        <div class="item">Raum 313</div>
-        <div class="item">Raum 311</div>
-        <div class="item">Raum</div>
-        <div class="item">Raum</div>
-        <div class="item">Raum</div>
-        <div class="item">Raum</div>
-        <div class="item">Raum</div>
-        <div class="item">Raum</div>
-        <div class="item">Raum</div>
+
+        <!-- Raum 312 -->
+        <a class="item quiz-item" href="/raum312.html" data-room="raum312">
+          <span>Raum 312</span>
+          <button class="resetScoreBtn" style="display: none">
+            Quiz-Score zurücksetzen
+          </button>
+          <span class="quiz-score"></span>
+        </a>
+
+        <div class="item quiz-item">Raum 313</div>
+        <div class="item quiz-item">Raum</div>
+        <div class="item quiz-item">Raum</div>
+        <div class="item quiz-item">Raum</div>
+        <div class="item quiz-item">Raum</div>
+        <div class="item quiz-item">Raum</div>
+        <div class="item quiz-item">Raum</div>
+        <div class="item quiz-item">Raum</div>
       </div>
     </div>
-    <script>
-      const score = localStorage.getItem("quizScore");
-      const scoreElement = document.getElementById("quizScoreDisplay");
-      scoreElement.textContent = score !== null ? `${score}/3` : "–";
-
-      const editBtn = document.getElementById("editModeBtn312");
-      const resetBtn = document.getElementById("resetScore312");
-
-      let editMode = false;
-
-      editBtn.addEventListener("click", () => {
-        editMode = !editMode;
-
-        editBtn.textContent = editMode ? "Exit Edit Mode" : "Edit Mode";
-
-        resetBtn.style.display = editMode ? "block" : "none";
-      });
-
-      resetBtn.addEventListener("click", () => {
-        localStorage.setItem("quizScore", 0);
-        scoreElement.textContent = "0/3";
-        alert("Quiz score reset! Player can retake the quiz.");
-      });
-    </script>
+    <script src="raum_list_script.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
