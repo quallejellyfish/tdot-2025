@@ -86,6 +86,7 @@
   color: white;
   text-decoration: none;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .menu_item a:hover,
@@ -352,3 +353,4 @@ label {
   flex-direction: column;
   gap: 50px;
 }
+
