@@ -132,11 +132,66 @@
   overflow: hidden;
 }
 
-.image {
+.title {
+  margin-bottom: 20px;
+}
+
+/*.image {
+  width: 500px;
   max-width: 100%;
   height: auto;
   margin-top: 20px;
   display: block;
+}*/
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto 20px auto;
+  overflow: hidden;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  padding: 5px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  user-select: none;
+  z-index: 1;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 label {
