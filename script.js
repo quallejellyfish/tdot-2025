@@ -13,11 +13,14 @@ document.addEventListener("click", (e) => {
   menuList.classList.remove("open");
 });
 
+/////////
+// für den bilder spaß
+////////
+
 let currentImage = 0;
 const slides = document.querySelectorAll(".slide");
 const total = slides.length;
 
-// Show the first image
 slides[currentImage].classList.add("active");
 
 function showSlide(index) {
@@ -32,4 +35,39 @@ document.querySelector(".arrow.left").addEventListener("click", () => {
 
 document.querySelector(".arrow.right").addEventListener("click", () => {
   showSlide(currentImage + 1);
+});
+
+const fullscreenViewer = document.getElementById("fullscreenViewer");
+const fullscreenImage = document.getElementById("fullscreenImage");
+const fsLeft = document.querySelector(".fs-left");
+const fsRight = document.querySelector(".fs-right");
+
+slides.forEach((img, index) => {
+  img.style.cursor = "zoom-in";
+
+  img.addEventListener("click", () => {
+    currentImage = index;
+    fullscreenImage.src = slides[currentImage].src;
+    fullscreenViewer.style.display = "flex";
+    fullscreenViewer.style.flexDirection = "column";
+    fullscreenViewer.style.color = "#fff";
+  });
+});
+
+fullscreenViewer.addEventListener("click", (e) => {
+  if (e.target === fullscreenViewer) {
+    fullscreenViewer.style.display = "none";
+  }
+});
+
+fsLeft.addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentImage = (currentImage - 1 + total) % total;
+  fullscreenImage.src = slides[currentImage].src;
+});
+
+fsRight.addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentImage = (currentImage + 1) % total;
+  fullscreenImage.src = slides[currentImage].src;
 });

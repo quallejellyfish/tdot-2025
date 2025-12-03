@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TdoT 2025 - GTS Lessing</title>
+  </head>
+  <body>
+    <div class="head">
+      <div class="icon_menu">
+        <a class="i_menu"></a>
+        <a class="i_close"></a>
+      </div>
+
+      <div class="head-content">
+        <a class="logo" href="/index.html">
+          <h1 style="margin: 0" title="Zur Startseite">Lessing</h1>
+        </a>
+
+        <!-- SLIDE MENU -->
+        <ul class="menu_list">
+          <li class="menu_item">
+            <a class="txt" href="/raeume.html" title="Zur Raum liste"
+              >Raum Liste</a
+            >
+          </li>
+          <li class="menu_item">
+            <a class="txt" href="/about_me.html" title="Zur About Me"
+              >About Me</a
+            >
+          </li>
+          <ul class="sub_list">
+            <li>
+              <a href="/raeume.html" title="Zur Raum liste">Raum Liste</a>
+            </li>
+            <li>
+              <a href="/about_me.html" title="Zur About Me">About Me</a>
+            </li>
+          </ul>
+
+          <li class="menu_item menu_item_lan">
+            <a class="en" title="Sprachenänderung auf English">English</a>
+            <span style="color: white; font-size: 1.6rem">|</span>
+            <a class="de" title="Sprachenänderung auf Deutsch">Deutsch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="intro">
+        <div class="title">
+          <h1>Wilkommen in Raum ???</h1>
+        </div>
+        <img
+          src="/bilder/Image-not-found.png"
+          class="image"
+          alt=""
+        />
+        <div class="info-text">
+        </div>
+        <a href="/raeume.html" class="btn">Zurück zur Raum Liste</a>
+      </div>
+    </div>
+    <script src="quiz_script.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
