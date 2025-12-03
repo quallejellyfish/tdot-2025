@@ -1,3 +1,4 @@
+console.log("loaded");
 const iconMenu = document.querySelector(".icon_menu");
 const menuList = document.querySelector(".menu_list");
 const wrapper = document.querySelector(".wrapper");
@@ -71,3 +72,4 @@ fsRight.addEventListener("click", (e) => {
   currentImage = (currentImage + 1) % total;
   fullscreenImage.src = slides[currentImage].src;
 });
+
