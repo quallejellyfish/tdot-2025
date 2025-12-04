@@ -52,7 +52,7 @@ roomItems.forEach((room) => {
 
 editBtn.addEventListener("click", () => {
   editMode = !editMode;
-  editBtn.textContent = editMode ? "Exit Edit Mode" : "Edit Mode";
+  editBtn.textContent = editMode ? "-" : "-";
 
   document
     .querySelectorAll(".resetScoreBtn")

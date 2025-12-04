@@ -9,21 +9,37 @@ const submitBtn = document.getElementById("submitQuiz");
 const savedScore = localStorage.getItem(quizKey);
 const colored = localStorage.getItem(colorKey);
 
+if (savedScore === null) {
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = "0.5";
+}
+
 if (savedScore !== null) {
   const score = parseInt(savedScore);
-  if (score <= 0) {
-    quizForm.querySelectorAll("input").forEach((inp) => (inp.disabled = false));
-    submitBtn.disabled = false;
-    quizResult.innerHTML = "";
-    localStorage.removeItem(quizKey);
-  } else {
-    quizForm.querySelectorAll("input").forEach((inp) => (inp.disabled = true));
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = "0.5";
 
-    quizResult.innerHTML = `<h3>Du hast ${score} / 3 richtig!</h3>`;
-  }
+  quizForm.querySelectorAll("input").forEach((inp) => (inp.disabled = true));
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = "0.5";
+
+  quizResult.innerHTML = `<h3>Du hast ${score} / 3 richtig!</h3>`;
 }
+
+function updateSubmitState() {
+  const answers = ["q1", "q2", "q3"];
+  let allAnswered = true;
+
+  answers.forEach((q) => {
+    const selected = quizForm.querySelector(`input[name="${q}"]:checked`);
+    if (!selected) allAnswered = false;
+  });
+
+  submitBtn.disabled = !allAnswered;
+  submitBtn.style.opacity = allAnswered ? "1" : "0.5";
+}
+
+quizForm.querySelectorAll("input[type=radio]").forEach((inp) => {
+  inp.addEventListener("change", updateSubmitState);
+});
 
 submitBtn.addEventListener("click", function () {
   let score = 0;
@@ -43,7 +59,6 @@ submitBtn.addEventListener("click", function () {
           userInput.parentElement.style.color = "green";
         } else {
           userInput.parentElement.style.color = "red";
-
           correctInput.parentElement.style.color = "green";
         }
       }

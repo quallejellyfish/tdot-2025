@@ -1,4 +1,3 @@
-console.log("loaded");
 const iconMenu = document.querySelector(".icon_menu");
 const menuList = document.querySelector(".menu_list");
 const wrapper = document.querySelector(".wrapper");
@@ -14,9 +13,9 @@ document.addEventListener("click", (e) => {
   menuList.classList.remove("open");
 });
 
-/////////
+//======================
 // für den bilder spaß
-////////
+//======================
 
 let currentImage = 0;
 const slides = document.querySelectorAll(".slide");
@@ -73,3 +72,46 @@ fsRight.addEventListener("click", (e) => {
   fullscreenImage.src = slides[currentImage].src;
 });
 
+let startX = 0;
+let endX = 0;
+const SWIPE_DISTANCE = 50;
+
+const slider = document.querySelector(".image-slider");
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe("slider");
+});
+
+fullscreenViewer.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+fullscreenViewer.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe("fullscreen");
+});
+
+function handleSwipe(mode) {
+  let distance = endX - startX;
+
+  if (Math.abs(distance) < SWIPE_DISTANCE) return;
+
+  if (distance < 0) {
+    if (mode === "slider") showSlide(currentImage + 1);
+    if (mode === "fullscreen") {
+      currentImage = (currentImage + 1) % total;
+      fullscreenImage.src = slides[currentImage].src;
+    }
+  } else {
+    if (mode === "slider") showSlide(currentImage - 1);
+    if (mode === "fullscreen") {
+      currentImage = (currentImage - 1 + total) % total;
+      fullscreenImage.src = slides[currentImage].src;
+    }
+  }
+}

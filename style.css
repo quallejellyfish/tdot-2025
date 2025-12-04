@@ -28,6 +28,7 @@
   width: 1200px;
   height: 72px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .logo h1 {
@@ -96,6 +97,12 @@
   transition: text-decoration 0.5s ease;
 }
 
+#editModeBtn312 {
+  font-weight: 800;
+  line-height: 1;
+  overflow: hidden;
+}
+
 .sub_list {
   display: none;
   position: absolute;
@@ -133,7 +140,13 @@
 }
 
 .title {
+  font-size: 2.3rem;
   margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.title h1 {
+  font-size: 2.3rem !important;
 }
 
 /*.image {
@@ -265,7 +278,7 @@ label {
   border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s;
   font-size: 1.6em;
-  margin-top: 50px;
+  margin: 45px 0 100px 0;
 }
 
 .btn:hover {
@@ -386,6 +399,7 @@ label {
   margin-top: 20px;
   border-radius: 10px;
   max-width: 600px;
+  font-size: 1.1rem;
 }
 
 .quiz h2 {
@@ -439,6 +453,7 @@ label {
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 20px;
+  font-weight: 800;
 }
 
 .edit-btn:hover {
@@ -465,4 +480,12 @@ label {
   display: flex;
   flex-direction: column;
   gap: 50px;
+}
+
+.weihnachtsmarkt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
