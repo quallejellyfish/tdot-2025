@@ -490,6 +490,7 @@ label {
   gap: 20px;
 }
 .info-text h2 li {
- list-style-type: disc;
+ list-style-type: disc!important;
 }
+
 
