@@ -19,7 +19,7 @@ function updateTotalScore() {
   const bonusTextElement = document.getElementById("bonusText");
 
   if (totalScoreElement) {
-    totalScoreElement.textContent = `Gesamtscore: ${totalCorrect} / ${totalPossible}`;
+    totalScoreElement.textContent = `Gesamtscore: ${totalCorrect} / ${totalPossible - 3}`;
   }
   if (bonusTextElement) {
     const percent = (totalCorrect / totalPossible) * 100;
@@ -73,3 +73,4 @@ editBtn.addEventListener("click", () => {
 });
 
 updateTotalScore();
+
