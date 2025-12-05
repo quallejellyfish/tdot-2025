@@ -489,3 +489,6 @@ label {
   align-items: center;
   gap: 20px;
 }
+.info-text li {
+ list-style-type: disc;
+}
