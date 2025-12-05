@@ -16,8 +16,22 @@ function updateTotalScore() {
   });
 
   const totalScoreElement = document.getElementById("totalScore");
+  const bonusTextElement = document.getElementById("bonusText");
+
   if (totalScoreElement) {
     totalScoreElement.textContent = `Gesamtscore: ${totalCorrect} / ${totalPossible}`;
+  }
+  if (bonusTextElement) {
+    const percent = (totalCorrect / totalPossible) * 100;
+
+    if (totalCorrect === totalPossible) {
+      bonusTextElement.textContent =
+        "Perfekt! Du hast alle Fragen richtig beantwortet! 🎉";
+    } else if (percent >= 80) {
+      bonusTextElement.textContent = "Sehr gut! Du bist fast perfekt! 🔥";
+    } else if (percent >= 50) {
+      bonusTextElement.textContent = "Gut gemacht! Hälfte richtig! 💪";
+    }
   }
 }
 
@@ -26,7 +40,6 @@ const roomItems = document.querySelectorAll(".quiz-item");
 roomItems.forEach((room) => {
   const roomName = room.getAttribute("data-room");
 
-  // Skip no data-room attribute
   if (!roomName) return;
 
   const scoreDisplay = room.querySelector(".quiz-score");
