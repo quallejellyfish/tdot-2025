@@ -360,10 +360,10 @@ label {
     font-weight: normal;
   }
 
-  .btn {
+  /*.btn {
     padding: 10px 20px;
     font-size: 0.9em;
-  }
+  }*/
 }
 @media screen and (max-width: 768px) {
   .menu_list .menu_item {
@@ -492,5 +492,6 @@ label {
 .info-text h2 li {
  list-style-type: disc!important;
 }
+
 
 
